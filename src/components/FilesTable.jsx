@@ -71,7 +71,7 @@ export default function FilesTable({
                   </Button>
                 </TableCell>
                 <TableCell align="right">
-                  <Button
+                  <Button id="deleteButton"
                     onClick={() => handleDeleteFile(file.id, file.fileName)}
                   >
                     <DeleteIcon />

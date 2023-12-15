@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { TextField, Button, Container, Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 
 const LoginForm = () => {
   const navigate = useNavigate();
+  const [errorMessage, setErrorMessage] = useState(null); // State to hold error message
   const {
     handleSubmit,
     register,
@@ -24,7 +25,9 @@ const LoginForm = () => {
     })
       .then((response) => {
         if (!response.ok) {
+          setErrorMessage("Unauthorized access. Please check your credentials."); // Set error message
           throw new Error(`HTTP error! Status: ${response.status}`);
+
         }
         return response.json();
       })
@@ -77,6 +80,7 @@ const LoginForm = () => {
             helperText={errors.password?.message}
           />
           <Button
+            id="form"
             type="submit"
             fullWidth
             variant="contained"
@@ -85,6 +89,11 @@ const LoginForm = () => {
             Sign In
           </Button>
         </form>
+        {errorMessage && (
+          <Typography variant="body2" color="error" align="center">
+            {errorMessage}
+          </Typography>
+        )}
       </div>
     </Container>
   );

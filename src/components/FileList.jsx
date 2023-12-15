@@ -9,8 +9,7 @@ const FileList = ({ files, handleDownloadFile, handleDeleteFile }) => {
         handleDownloadFile={handleDownloadFile}
         handleDeleteFile={handleDeleteFile}
       />
-    </div>
-  );
-};
+    </div>                                         
+)}
 
 export default FileList;

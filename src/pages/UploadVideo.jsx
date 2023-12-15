@@ -61,7 +61,7 @@ const UploadVideo = () => {
             handleSubmitForm={handleSubmitForm}
             uploadText={uploadText}
           />
-          <Button variant="contained" onClick={() => navigate("/files")}>
+          <Button  id="viewAllButton" variant="contained" onClick={() => navigate("/files")}>
             View All Files
           </Button>
         </div>

@@ -36,7 +36,7 @@ const Navbar = () => {
             Logo
           </Typography>
         </div>
-        <Button onClick={handleLogout} variant="contained" color="secondary">
+        <Button id="signoutButton" onClick={handleLogout} variant="contained" color="secondary">
           Sign Out
         </Button>
       </div>
